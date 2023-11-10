@@ -25,7 +25,7 @@ const homepageDisplay = async () => {
           <h5 class="card-title">${product.name}</h5>
           <p class="card-text">Price : ${product.price} € </p>
           <a href="http://127.0.0.1:5500/details.html?productId=${product._id}" class="btn btn-primary">Details</a>
-          <a href="http://127.0.0.1:5500/backoffice.html" class="btn btn-primary">Modify</a>
+          <a href="http://127.0.0.1:5500/backoffice.html?productId=${product._id}" class="btn btn-primary">Modify</a>
         </div>
       </div>`;
 
