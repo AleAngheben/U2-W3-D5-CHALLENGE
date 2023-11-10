@@ -1,4 +1,5 @@
 const URL = "https://striveschool-api.herokuapp.com/api/product/";
+
 const homepageDisplay = async () => {
   try {
     const response = await fetch(URL, {
@@ -23,7 +24,8 @@ const homepageDisplay = async () => {
         <div class="card-body">
           <h5 class="card-title">${product.name}</h5>
           <p class="card-text">Price : ${product.price} € </p>
-          <a href="#" class="btn btn-primary">Details</a>
+          <a href="http://127.0.0.1:5500/details.html?productId=${product._id}" class="btn btn-primary">Details</a>
+          <a href="http://127.0.0.1:5500/backoffice.html" class="btn btn-primary">Modify</a>
         </div>
       </div>`;
 
