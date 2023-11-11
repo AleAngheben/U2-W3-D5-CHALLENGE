@@ -6,14 +6,6 @@ const price = document.getElementById("price");
 
 const URL = "https://striveschool-api.herokuapp.com/api/product/";
 
-// const params = new URLSearchParams(window.location.search);
-// const productId = params.get("appId");
-
-// const URL = productId
-//   ? "https://striveschool-api.herokuapp.com/api/agenda/" + productId
-//   : "https://striveschool-api.herokuapp.com/api/agenda/";
-// const method = productId ? "PUT" : "POST";
-
 const productCreate = async () => {
   try {
     const productObj = {
@@ -92,7 +84,6 @@ const backofficeList = async () => {
 
 window.onload = () => {
   backofficeList();
-  editProduct();
 };
 
 const editProduct = async (editProductId) => {
@@ -108,14 +99,12 @@ const editProduct = async (editProductId) => {
 
     const product = await response.json();
 
-    // Precompila i campi del form con i dettagli del prodotto
     productName.value = product.name;
     description.value = product.description;
     brand.value = product.brand;
     imageUrl.value = product.imageUrl;
     price.value = product.price;
 
-    // Aggiungi l'ID del prodotto come attributo data al form per l'aggiornamento
     document
       .getElementById("back-form")
       .setAttribute("data-product-id", editProductId);
