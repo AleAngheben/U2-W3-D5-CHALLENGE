@@ -16,7 +16,7 @@ const homepageDisplay = async () => {
 
     data.forEach((product) => {
       const card = document.createElement("div");
-      card.classList.add("col-3");
+      card.classList.add("col-8", "offset-xs-2", "col-md-4", "col-lg-3");
       card.innerHTML = `  <div class="card" style="height: 350px;">
       <div style="height: 200px; overflow: hidden; ">
       <img src="${product.imageUrl}" class="card-img-top" alt="immagine prodotto" style="width: 100%; height: 100%; object-fit: cover;"/>
@@ -24,8 +24,8 @@ const homepageDisplay = async () => {
         <div class="card-body">
           <h5 class="card-title">${product.name}</h5>
           <p class="card-text">Price : ${product.price} € </p>
-          <a href="http://127.0.0.1:5500/details.html?productId=${product._id}" class="btn btn-primary">Details</a>
-          <a href="http://127.0.0.1:5500/backoffice.html?productId=${product._id}" class="btn btn-primary">Modify</a>
+          <a href="http://127.0.0.1:5500/details.html?productId=${product._id}" class="btn btn-primary mt-3 me-2">Scopri di più</a>
+          <a href="http://127.0.0.1:5500/backoffice.html?productId=${product._id}" class="btn btn-warning mt-3">Modify</a>
         </div>
       </div>`;
 

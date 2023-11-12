@@ -6,6 +6,8 @@ const price = document.getElementById("price");
 
 const URL = "https://striveschool-api.herokuapp.com/api/product/";
 
+const resetBtn = document.getElementById("reset-btn");
+
 const productCreate = async () => {
   try {
     const productObj = {
@@ -35,6 +37,9 @@ const productCreate = async () => {
       brand.value = "";
       imageUrl.value = "";
       price.value = "";
+
+      alert("Prodotto aggiunto! Verrai indirizzato alla Homepage");
+      window.location.href = "http://127.0.0.1:5500/homepage.html";
     } else {
       console.log("failed create");
     }
@@ -113,25 +118,17 @@ const editProduct = async (editProductId) => {
   }
 };
 
-// FUNZIONE PER ELIMINARE UN OGGETTO CON UN BOTTONE
-
-// const deleteProduct = async (deleteProductId) => {
-//   try {
-//     const acceptDelete = confirm(
-//       "Sei sicuro di voler eliminare questo prodotto?"
+// if (!productId) {
+//   resetBtn.addEventListener("click", function () {
+//     const confirmedReset = confirm(
+//       "Sei sicuro di voler resettare TUTTI i campi del form?"
 //     );
-
-//     if (acceptDelete) {
-//       const response = await fetch(URL + deleteProductId, {
-//         method: "DELETE",
-//         headers: {
-//           Authorization:
-//             "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTRkMDQyNmQxYmJlMTAwMTgzOWU2MjciLCJpYXQiOjE2OTk1NDYxNTEsImV4cCI6MTcwMDc1NTc1MX0.n6bF57FpGYml_yaLtIhrUAg10VpZY-4vrUm-nkLmsbg",
-//           "Content-Type": "application/json",
-//         },
-//       });
-//       const product = await response.json();
-//       alert("hai eliminato " + product.name);
+//     if (confirmedReset) {
+//       productName.value = "";
+//       description.value = "";
+//       brand.value = "";
+//       imageUrl.value = "";
+//       price.value = "";
 //     }
-//   } catch (error) {}
-// };
+//   });
+// }
