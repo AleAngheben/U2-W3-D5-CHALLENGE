@@ -18,8 +18,8 @@ const homepageDisplay = async () => {
       const card = document.createElement("div");
       card.classList.add("col-3");
       card.innerHTML = `  <div class="card" style="height: 350px;">
-      <div style="height: 200px; overflow: hidden;">
-      <img src="${product.imageUrl}" class="card-img-top" alt="immagine prodotto" />
+      <div style="height: 200px; overflow: hidden; ">
+      <img src="${product.imageUrl}" class="card-img-top" alt="immagine prodotto" style="width: 100%; height: 100%; object-fit: cover;"/>
     </div>
         <div class="card-body">
           <h5 class="card-title">${product.name}</h5>

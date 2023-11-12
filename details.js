@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", async () => {
            </div   >
            <div class=" mt-5">
            <a href="http://127.0.0.1:5500/backoffice.html?productId=${productDetails._id}"><button class="btn btn-lg btn-warning me-5">Modifica</button></a>
-           <a href="http://127.0.0.1:5500/backoffice.html?productId=${productDetails._id}"><button class="btn btn-lg btn-danger">Elimia</button></a>
+          
          </div>
       `;
 
